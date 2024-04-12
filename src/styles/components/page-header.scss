@@ -1,0 +1,10 @@
+.header {
+    padding-bottom: 16px;
+    &__title {
+        color: $text;
+    }
+    &__subtitle {
+        color: $text-light;
+        padding: 4px 0;
+    }
+}

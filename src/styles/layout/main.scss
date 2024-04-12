@@ -1,0 +1,46 @@
+.layout {
+    display: flex;
+    min-height: 100vh;
+
+    &__sidenav {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        min-width: 250px;
+        position: fixed;
+    }
+
+    &__content {
+        flex-grow: 1;
+        padding: 64px;
+        margin-left: 250px;
+    }
+
+    &__bottom-menu {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+        &__sidenav {
+            height: auto;
+            display: flex;
+            width: 100%;
+            position: sticky;
+            top: 0;
+        }
+        &__content {
+            padding: 32px;
+            margin-left: 0px;
+        }
+        &__bottom-menu {
+            display: flex;
+            position: sticky;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+}

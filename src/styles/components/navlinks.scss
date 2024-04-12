@@ -1,0 +1,43 @@
+.navlinks {
+    display: flex;
+    flex-direction: column;
+    &__menu-item {
+        color: #888;
+        display: flex;
+        place-items: center;
+        padding: 16px 0;
+        text-decoration: none;
+        font-weight: 500;
+        &:hover {
+            color: #2563eb;
+        }
+        &.active {
+            color: #2563eb;
+        }
+    }
+
+    &__menu-item-icon {
+        width: 24px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navlinks {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+
+        &__menu-item {
+            flex-direction: column;
+        }
+
+        &__menu-item-text {
+            font-size: small;
+        }
+
+        &__menu-item-icon {
+            padding-right: 0px;
+        }
+    }
+}
