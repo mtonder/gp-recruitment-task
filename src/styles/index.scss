@@ -1,8 +1,8 @@
 // Base
-@import 'base/global';
 @import 'base/reset';
-@import 'base/typography';
 @import 'base/colors';
+@import 'base/typography';
+@import 'base/global';
 
 // Layout
 @import 'layout/main';
@@ -12,3 +12,6 @@
 @import 'components/sidenav';
 @import 'components/navlinks';
 @import 'components/bottom-menu';
+
+//Pages
+@import 'pages/about';
