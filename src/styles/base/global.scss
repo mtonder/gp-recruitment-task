@@ -15,12 +15,12 @@
 
 body {
     margin: 0;
-}
 
-html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
 }
 
 a {
@@ -33,4 +33,24 @@ a {
 
 .bold {
     font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid $border-dark;
+    font-size: medium;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border: 1px solid $link-hover;
+    }
+}
+
+label {
+    display: flex;
+    font-size: small;
+    color: $text-light;
 }

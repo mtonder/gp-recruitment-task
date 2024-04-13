@@ -1,3 +1,4 @@
+import FactorialCalculator from '../components/FactorialCalculator';
 import PageHeader from '../components/Header';
 
 function Factorial() {
@@ -5,9 +6,13 @@ function Factorial() {
         <>
             <PageHeader
                 title='Factorial'
-                subtitle='Factorial subtitle'
+                subtitle='Obliczanie silni wraz z historią obliczeń.'
             />
-            <p>This is the factorial page.</p>
+            <section>
+                <div>
+                    <FactorialCalculator />
+                </div>
+            </section>
         </>
     );
 }
