@@ -24,7 +24,7 @@
 @media (max-width: 768px) {
     .navlinks {
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
         width: 100%;
 
         &__menu-item {

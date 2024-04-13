@@ -26,7 +26,7 @@ const links: Link[] = [
         icon: CalculatorIcon,
     },
     {
-        name: 'About',
+        name: 'About app',
         href: '/about',
         icon: InformationCircleIcon,
     },

@@ -7,7 +7,7 @@ function About() {
     return (
         <div className='about'>
             <PageHeader
-                title='About'
+                title='About app'
                 subtitle='Lista wymagań dla zadania rekrutacyjnego.'
             />
             <section>
