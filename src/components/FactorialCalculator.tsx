@@ -6,13 +6,28 @@ function FactorialCalculator() {
     const { value, factorial, setValue } = useFactorialCalculator(5);
     const [computedFactorials, setComputedFactorials] = useState<Factorial[]>([]);
     const [isValid, setIsValid] = useState<boolean>(true);
+    const [isEmpty, setIsEmpty] = useState<boolean>(false);
 
     useEffect(() => {
-        console.log(`factorial changed': ${factorial}`);
         if (factorial) setComputedFactorials((prevItems) => [factorial, ...prevItems]);
     }, [factorial]);
 
-    const handleChange = (factorial: number) => {
+    const handleChange = (value: string) => {
+        const factorial = Number(value);
+
+        if (isNaN(factorial)) {
+            return;
+        }
+
+        if (value === '') {
+            setIsEmpty(true);
+            return;
+        } else {
+            setTimeout(() => {
+                setIsEmpty(false);
+            }, 0);
+        }
+
         if (factorial < 10000 && factorial >= 0) {
             setValue(factorial);
             setIsValid(true);
@@ -26,14 +41,16 @@ function FactorialCalculator() {
             <label htmlFor='factorial-input'>Podaj silnię do obliczenia</label>
             <input
                 className='factorial-calculator__input'
-                type='number'
-                value={value}
-                onChange={(e) => handleChange(Number(e.target.value))}
+                type='text'
+                inputMode='numeric'
+                value={isEmpty ? '' : value}
+                onChange={(e) => handleChange(e.target.value)}
                 id='factorial-input'
+                pattern='[0-9]*'
             />
             {isValid ? (
                 <p className='factorial-calculator__computed-result'>
-                    Wynik: <span className='bold'>{factorial?.computedValue}</span>
+                    Wynik: <span className='bold'>{isEmpty ? '' : factorial?.computedValue}</span>
                 </p>
             ) : (
                 <p className='factorial-calculator__computed-result--limit-exceeded'>
