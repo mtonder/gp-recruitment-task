@@ -1,0 +1,29 @@
+.about {
+    &__author {
+        padding: 16px 0 8px;
+    }
+
+    &__footer {
+        border-top: 1px solid $border;
+    }
+
+    &__poweredby {
+        padding: 8px 0;
+        display: flex;
+        place-items: center;
+        img {
+            width: 32px;
+            padding: 0 2px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        &__footer {
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+        }
+    }
+}

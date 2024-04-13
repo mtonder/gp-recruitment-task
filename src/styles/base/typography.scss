@@ -1,6 +1,7 @@
 h1 {
     font-size: 1.2rem;
     font-weight: 600;
+    color: #171717;
     @media (min-width: 640px) {
         font-size: 1.4rem;
     }
@@ -14,13 +15,14 @@ h1 {
 
 h2 {
     font-size: 1.1rem;
+    color: #171717;
     @media (min-width: 640px) {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     @media (min-width: 768px) {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     @media (min-width: 1024px) {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 }

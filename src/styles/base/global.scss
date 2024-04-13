@@ -1,7 +1,11 @@
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Geist Variable';
+
     line-height: 1.5;
     font-weight: 400;
+
+    color: $text;
+    background-color: $main-bg;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -11,10 +15,42 @@
 
 body {
     margin: 0;
+
+    *,
+    ::before,
+    ::after {
+        box-sizing: border-box;
+    }
 }
 
-html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+a {
+    color: $link;
+    text-decoration: none;
+    :hover {
+        color: $link-hover;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid $border-dark;
+    font-size: medium;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border: 1px solid $link-hover;
+    }
+}
+
+label {
+    display: flex;
+    font-size: small;
+    color: $text-light;
 }
