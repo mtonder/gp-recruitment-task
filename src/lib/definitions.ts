@@ -1,7 +1,7 @@
 export type Factorial = {
     date: string;
     computedValue: string;
-    initialValue: number;
+    initialValue: number | null;
 };
 
 export type FactorialCalculator = {

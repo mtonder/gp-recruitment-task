@@ -1,4 +1,34 @@
 .factorial-calculator {
+    &__form {
+        display: flex;
+        flex-direction: row;
+        place-items: center;
+    }
+    &__input-container {
+        flex-grow: 1;
+        margin-right: 8px;
+    }
+    &__button-container {
+        margin-top: 16px;
+    }
+    &__button {
+        width: 100px;
+        padding: 9px;
+        font-size: medium;
+        border-radius: 8px;
+        background: $link;
+        color: white;
+        border: none;
+
+        &:hover {
+            background: $link-hover;
+            cursor: pointer;
+        }
+        &:disabled {
+            background: $text-light;
+        }
+    }
+
     &__input {
         min-width: 200px;
         width: 100%;
