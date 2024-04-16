@@ -49,7 +49,6 @@ function FactorialCalculator() {
                 <div className='factorial-calculator__input-container'>
                     <label htmlFor='factorial-input'>Podaj silnię do obliczenia</label>
                     <input
-                        autoFocus
                         className='factorial-calculator__input'
                         type='text'
                         inputMode='numeric'

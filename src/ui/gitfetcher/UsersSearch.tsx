@@ -64,7 +64,7 @@ function UsersSearch() {
                     <TextField
                         sx={{
                             '& .MuiInputBase-root:hover .MuiOutlinedInput-notchedOutline': {
-                                border: '2px solid #2979ff',
+                                border: '1px solid #2979ff',
                             },
                         }}
                         {...params}
