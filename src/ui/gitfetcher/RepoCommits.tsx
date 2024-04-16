@@ -7,7 +7,7 @@ type RepoCommitsProps = {
 };
 
 export default function RepoCommits({ repo, selectedUser }: RepoCommitsProps) {
-    const [getCommits, { data: commits = [], isLoading, isSuccess, isError }] =
+    const [getCommits, { data: commits = [], isLoading, isSuccess }] =
         useLazyGetRepositoryCommitsQuery();
 
     const user = React.useRef(selectedUser);
@@ -22,8 +22,12 @@ export default function RepoCommits({ repo, selectedUser }: RepoCommitsProps) {
         <div>
             {isSuccess && commits.length > 0 ? (
                 commits.map((commit) => (
-                    <div key={commit.sha}>
+                    <div
+                        key={commit.sha}
+                        className='repo-commits__commit'
+                    >
                         <a
+                            className='repo-commits__commit-link'
                             href={commit.html_url}
                             target='_blank'
                             rel='noreferrer'
@@ -33,9 +37,9 @@ export default function RepoCommits({ repo, selectedUser }: RepoCommitsProps) {
                     </div>
                 ))
             ) : (
-                <div>Brak commitów</div>
+                <div className='repo-commits__commit'>Brak commitów</div>
             )}
-            {isError && <div>Błąd</div>}
+            {/* {isError && <div>Błąd</div>} */}
         </div>
     );
 }

@@ -15,22 +15,32 @@ function ReposList({ repos }: ReposListProps) {
     }, [selectedUser]);
 
     return (
-        <div>
-            <div>
-                {repos.map((repo: Repo) => {
-                    return (
-                        <div key={repo.id}>
-                            <div>{repo.name}</div>
-                            <div>
-                                <RepoCommits
-                                    repo={repo.name}
-                                    selectedUser={selectedUser || ''}
-                                />
-                            </div>
+        <div className='repos-list'>
+            {repos.map((repo: Repo) => {
+                return (
+                    <div
+                        key={repo.id}
+                        className='repos-list__repo'
+                    >
+                        <div>
+                            <a
+                                href={repo.html_url}
+                                target='_blank'
+                                rel='noreferrer'
+                                className='repos-list__title'
+                            >
+                                {repo.name}
+                            </a>
                         </div>
-                    );
-                })}
-            </div>
+                        <div className='repos-list__commits'>
+                            <RepoCommits
+                                repo={repo.name}
+                                selectedUser={selectedUser || ''}
+                            />
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     );
 }

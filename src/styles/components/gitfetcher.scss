@@ -1,23 +1,19 @@
 .gitfetcher {
-    &__container {
+    &__userssearch {
+        padding: 4px 0;
     }
 
-    &__autocomplete {
+    &__username {
+        font-size: 40px;
     }
 
-    &__info {
+    &__reposlist {
+        padding: 4px 0;
         &--info {
-            padding: 4px 0;
-
             color: $info;
         }
         &--error {
-            padding: 4px 0;
-
             color: $danger;
         }
-    }
-
-    &__list {
     }
 }

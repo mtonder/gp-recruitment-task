@@ -1,0 +1,15 @@
+.repo-commits {
+    &__commit-link {
+        color: $text;
+
+        &:hover {
+            text-decoration: underline;
+            color: $link-hover;
+        }
+    }
+
+    &__commit {
+        padding: 10px;
+        display: flex;
+    }
+}

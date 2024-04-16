@@ -9,9 +9,7 @@ function FactorialPage() {
                 subtitle='Obliczanie silni wraz z historią obliczeń.'
             />
             <section>
-                <div>
-                    <FactorialCalculator />
-                </div>
+                <FactorialCalculator />
             </section>
         </>
     );

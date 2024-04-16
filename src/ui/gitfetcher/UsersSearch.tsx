@@ -36,7 +36,7 @@ function UsersSearch() {
     };
 
     return (
-        <>
+        <div className='users-search'>
             <label>Wyszukaj użytkownika</label>
             <Autocomplete
                 freeSolo
@@ -94,11 +94,19 @@ function UsersSearch() {
                     />
                 )}
             />
-            {isSuccess && users.length == 0 ? (
-                <div>Nie znaleziono użytkownika o podanym loginie.</div>
-            ) : null}
-            {isError && <div>Wystąpił błąd podczas wyszukiwania użytkownika.</div>}
-        </>
+            <div className='users-search__alert'>
+                {isSuccess && users.length == 0 ? (
+                    <div className='users-search__alert--info'>
+                        Nie znaleziono użytkownika o podanym loginie
+                    </div>
+                ) : null}
+                {isError && (
+                    <div className='users-search__alert--error'>
+                        Wystąpił błąd podczas wyszukiwania użytkownika
+                    </div>
+                )}
+            </div>
+        </div>
     );
 }
 

@@ -1,0 +1,21 @@
+.repos-list {
+    &__title {
+        font-size: 24px;
+        color: $link;
+    }
+
+    &__repo {
+        border-bottom: 1px solid $border-dark;
+
+        &:nth-of-type(odd) {
+            background-color: #f5f5f5;
+        }
+
+        &:first-of-type {
+            border-top: 1px solid $border-dark;
+        }
+    }
+
+    &__commits {
+    }
+}

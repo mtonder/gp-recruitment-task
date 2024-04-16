@@ -1,0 +1,11 @@
+.users-search {
+    &__alert {
+        padding: 4px 0;
+        &--info {
+            color: $info;
+        }
+        &--error {
+            color: $danger;
+        }
+    }
+}

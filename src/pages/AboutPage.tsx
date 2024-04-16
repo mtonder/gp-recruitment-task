@@ -5,7 +5,7 @@ import redux from '/redux.svg';
 
 function AboutPage() {
     return (
-        <div className='about'>
+        <div className='about-page'>
             <PageHeader
                 title='About app'
                 subtitle='Lista wymagań dla zadania rekrutacyjnego.'
@@ -98,8 +98,8 @@ function AboutPage() {
                     </li>
                 </ul>
             </section>
-            <section className='about__footer'>
-                <div className='about__author'>
+            <section className='about-page__footer'>
+                <div className='about-page__author'>
                     Autor:{' '}
                     <a
                         target='_blank'
@@ -115,7 +115,7 @@ function AboutPage() {
                         alt='Vercel Deploy'
                     />
                 </div>
-                <div className='about__poweredby'>
+                <div className='about-page__poweredby'>
                     <img
                         src={vite}
                         alt='Powered by Vite'

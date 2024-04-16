@@ -22,17 +22,27 @@ function GitFetcher() {
     }, [selectedUser, getUserRepos]);
 
     return (
-        <div>
-            <div>
+        <div className='gitfetcher'>
+            <div className='gitfetcher__userssearch'>
                 <UsersSearch />
             </div>
             <div>
-                {isLoadingRepos && <div>Ładowanie</div>}
-                {isSuccessRepos && repos.length > 0 && <ReposList repos={repos} />}
-                {isSuccessRepos && repos.length == 0 && (
-                    <div className='gitfetcher__info--info'>Brak repozytoriów</div>
-                )}
-                {isErrorRepos && <div className='gitfetcher__info--error'>Błąd</div>}
+                <a
+                    href={`https://github.com/${selectedUser}`}
+                    target='_blank'
+                    rel='noreferrer'
+                    className='gitfetcher__username'
+                >
+                    {selectedUser}
+                </a>
+                <div className='gitfetcher__reposlist'>
+                    {isLoadingRepos && <div>Ładowanie</div>}
+                    {isSuccessRepos && repos.length > 0 && <ReposList repos={repos} />}
+                    {isSuccessRepos && repos.length == 0 && (
+                        <div className='gitfetcher__reposlist--info'>Brak repozytoriów</div>
+                    )}
+                    {isErrorRepos && <div className='gitfetcher__reposlist--error'>Błąd</div>}
+                </div>
             </div>
         </div>
     );
