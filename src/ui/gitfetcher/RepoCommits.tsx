@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { useLazyGetRepositoryCommitsQuery } from '../../redux/services/githubApi';
 
@@ -8,7 +7,7 @@ type RepoCommitsProps = {
 };
 
 export default function RepoCommits({ repo, selectedUser }: RepoCommitsProps) {
-    const [getCommits, { data: commits = [], isLoading, isSuccess, isError, error }] =
+    const [getCommits, { data: commits = [], isLoading, isSuccess, isError }] =
         useLazyGetRepositoryCommitsQuery();
 
     const user = React.useRef(selectedUser);
@@ -36,20 +35,7 @@ export default function RepoCommits({ repo, selectedUser }: RepoCommitsProps) {
             ) : (
                 <div>Brak commitów</div>
             )}
+            {isError && <div>Błąd</div>}
         </div>
     );
 }
-
-// if (error) {
-//     if ('status' in error) {
-//         const errMsg = 'error' in error ? error.error : JSON.stringify(error.data);
-//         return (
-//             <div>
-//                 <div>Błąd:</div>
-//                 <div>{errMsg}</div>
-//             </div>
-//         );
-//     } else {
-//         return <div>{error.message}</div>;
-//     }
-// }
