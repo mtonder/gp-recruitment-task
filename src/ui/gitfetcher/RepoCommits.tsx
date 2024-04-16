@@ -26,14 +26,34 @@ export default function RepoCommits({ repo, selectedUser }: RepoCommitsProps) {
                         key={commit.sha}
                         className='repo-commits__commit'
                     >
-                        <a
-                            className='repo-commits__commit-link'
-                            href={commit.html_url}
-                            target='_blank'
-                            rel='noreferrer'
-                        >
-                            {commit.commit.message}
-                        </a>
+                        <div>
+                            <a
+                                className='repo-commits__commit-link'
+                                href={commit?.html_url}
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                {commit.commit.message}
+                            </a>
+                        </div>
+                        <div>
+                            <span className='repo-commits__commit-author'>
+                                <img
+                                    src={commit?.author?.avatar_url}
+                                    alt='avatar'
+                                    className='repo-commits__commit-avatar'
+                                />
+                                <a
+                                    className='repo-commits__commit-link'
+                                    href={commit?.author?.html_url}
+                                    target='_blank'
+                                    rel='noreferrer'
+                                >
+                                    {commit?.author?.login}
+                                </a>{' '}
+                                commited at {new Date(commit.commit.author.date).toLocaleString()}
+                            </span>
+                        </div>
                     </div>
                 ))
             ) : (

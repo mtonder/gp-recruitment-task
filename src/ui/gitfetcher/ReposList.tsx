@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Repo } from '../../lib/definitions';
 import { useAppSelector } from '../../lib/hooks';
 import RepoCommits from './RepoCommits';
@@ -10,10 +9,6 @@ type ReposListProps = {
 function ReposList({ repos }: ReposListProps) {
     const selectedUser = useAppSelector((state) => state.github.selectedUser);
 
-    useEffect(() => {
-        console.log(selectedUser);
-    }, [selectedUser]);
-
     return (
         <div className='repos-list'>
             {repos.map((repo: Repo) => {
@@ -24,6 +19,15 @@ function ReposList({ repos }: ReposListProps) {
                     >
                         <div>
                             <a
+                                href={repo.owner.html_url}
+                                target='_blank'
+                                rel='noreferrer'
+                                className='repos-list__title'
+                            >
+                                {repo.owner.login}
+                            </a>
+                            {<span className='larger'>/</span>}
+                            <a
                                 href={repo.html_url}
                                 target='_blank'
                                 rel='noreferrer'
@@ -31,6 +35,9 @@ function ReposList({ repos }: ReposListProps) {
                             >
                                 {repo.name}
                             </a>
+                            <div className='smaller'>
+                                updated at {new Date(repo.updated_at).toLocaleString()}
+                            </div>
                         </div>
                         <div className='repos-list__commits'>
                             <RepoCommits

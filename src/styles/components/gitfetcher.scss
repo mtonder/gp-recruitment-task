@@ -1,14 +1,5 @@
 .gitfetcher {
-    &__userssearch {
-        padding: 4px 0;
-    }
-
-    &__username {
-        font-size: 40px;
-    }
-
     &__reposlist {
-        padding: 4px 0;
         &--info {
             color: $info;
         }
