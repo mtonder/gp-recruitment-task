@@ -1,9 +1,9 @@
-import PageHeader from '../components/Header';
+import PageHeader from '../ui/Header';
 import vite from '/vite.svg';
 import react from '/react.svg';
 import redux from '/redux.svg';
 
-function About() {
+function AboutPage() {
     return (
         <div className='about'>
             <PageHeader
@@ -134,4 +134,4 @@ function About() {
     );
 }
 
-export default About;
+export default AboutPage;

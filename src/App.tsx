@@ -1,10 +1,10 @@
 import './styles/index.scss';
 import { Route, Routes } from 'react-router-dom';
-import Gitfetcher from './pages/Gitfetcher';
-import About from './pages/About';
-import Factorial from './pages/Factorial';
-import Dashboard from './pages/Dashboard';
-import Layout from './components/Layout';
+import Gitfetcher from './pages/GitfetcherPage';
+import AboutPage from './pages/AboutPage';
+import FactorialPage from './pages/FactorialPage';
+import DashboardPage from './pages/DashboardPage';
+import Layout from './Layout';
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                 >
                     <Route
                         index
-                        element={<Dashboard />}
+                        element={<DashboardPage />}
                     />
                     <Route
                         path='/gitfetcher'
@@ -24,11 +24,11 @@ function App() {
                     />
                     <Route
                         path='/about'
-                        element={<About />}
+                        element={<AboutPage />}
                     />
                     <Route
                         path='/factorial'
-                        element={<Factorial />}
+                        element={<FactorialPage />}
                     />
                 </Route>
             </Routes>

@@ -1,7 +1,7 @@
-import FactorialCalculator from '../components/FactorialCalculator';
-import PageHeader from '../components/Header';
+import FactorialCalculator from '../ui/factorial/FactorialCalculator';
+import PageHeader from '../ui/Header';
 
-function Factorial() {
+function FactorialPage() {
     return (
         <>
             <PageHeader
@@ -17,4 +17,4 @@ function Factorial() {
     );
 }
 
-export default Factorial;
+export default FactorialPage;

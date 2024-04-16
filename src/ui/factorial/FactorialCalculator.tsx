@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { Factorial } from '../lib/definitions';
-import caluclateFactorial from '../lib/factorial';
+import { Factorial } from '../../lib/definitions';
+import caluclateFactorial from '../../lib/factorial';
 
 function FactorialCalculator() {
     const [value, setValue] = useState<number>();

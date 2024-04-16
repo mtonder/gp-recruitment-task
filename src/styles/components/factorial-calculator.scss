@@ -32,6 +32,11 @@
     &__input {
         min-width: 200px;
         width: 100%;
+        &:hover,
+        &:active,
+        &:focus {
+            border: 1px solid $link-hover;
+        }
     }
     &__computed-result {
         padding: 8px 0;

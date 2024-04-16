@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import useFactorialCalculator from '../hooks/useFactorialCalculator';
-import { Factorial } from '../lib/definitions';
+import useFactorialCalculator from '../../hooks/useFactorialCalculator';
+import { Factorial } from '../../lib/definitions';
 
 function FactorialCalculatorWithHook() {
     const { value, factorial, setValue } = useFactorialCalculator(5);

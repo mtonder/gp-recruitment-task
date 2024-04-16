@@ -1,0 +1,23 @@
+.gitfetcher {
+    &__container {
+    }
+
+    &__autocomplete {
+    }
+
+    &__info {
+        &--info {
+            padding: 4px 0;
+
+            color: $info;
+        }
+        &--error {
+            padding: 4px 0;
+
+            color: $danger;
+        }
+    }
+
+    &__list {
+    }
+}

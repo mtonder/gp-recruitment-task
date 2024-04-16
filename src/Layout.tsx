@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import Sidenav from './Sidenav';
-import BottomMenu from './BottomMenu';
+import Sidenav from './ui/Sidenav';
+import BottomMenu from './ui/BottomMenu';
 
 function Layout() {
     return (

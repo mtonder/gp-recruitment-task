@@ -1,6 +1,6 @@
-import PageHeader from '../components/Header';
+import PageHeader from '../ui/Header';
 
-function Dashboard() {
+function DashboardPage() {
     return (
         <>
             <PageHeader
@@ -12,4 +12,4 @@ function Dashboard() {
     );
 }
 
-export default Dashboard;
+export default DashboardPage;
