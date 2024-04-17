@@ -4,7 +4,7 @@ function CardWrapper() {
     const code: number = 1771;
     const files: number = 47;
     const popular: string = '.tsx';
-    const commits: number = 18;
+    const commits: number = 24;
 
     return (
         <div className='card-wrapper'>
