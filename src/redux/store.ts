@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { githubApi } from './services/githubApi';
 import githubReducer from './slices/githubSlice';
+import factorialReducer from './slices/factorialSlice';
 
 export const store = configureStore({
     reducer: {
         // Add the generated reducer as a specific top-level slice
         [githubApi.reducerPath]: githubApi.reducer,
         github: githubReducer,
+        factorial: factorialReducer,
     },
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
