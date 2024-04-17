@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useLazySearchUsersQuery } from '../../redux/services/githubApi';
-import { Fragment, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 
 import { useDebouncedCallback } from 'use-debounce';
-import { useAppDispatch } from '../../lib/hooks';
+import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { setSelectedUser } from '../../redux/slices/githubSlice';
 
 //used for autocomplete input
@@ -17,7 +17,20 @@ function UsersSearch() {
     const [searchUser, { data: users = [], isLoading, isSuccess, isError }] =
         useLazySearchUsersQuery();
 
+    const dispatch = useAppDispatch();
+    const selectedUser = useAppSelector((state) => state.github.selectedUser);
+
     const [open, setOpen] = useState(false);
+    const [value, setValue] = useState('');
+
+    useEffect(() => {
+        if (selectedUser) setValue(selectedUser);
+    }, [selectedUser]);
+
+    const handleInputChange = (value: string) => {
+        setValue(value);
+        debouncedSearchUser(value);
+    };
 
     const debouncedSearchUser = useDebouncedCallback((value) => {
         if (value) {
@@ -26,8 +39,6 @@ function UsersSearch() {
             setOpen(false);
         }
     }, 300);
-
-    const dispatch = useAppDispatch();
 
     const handleChange = (value: any) => {
         if (value?.label) {
@@ -55,11 +66,15 @@ function UsersSearch() {
                 onChange={(_event, value) => {
                     handleChange(value);
                 }}
-                onInputChange={(_event, value, _reason) => debouncedSearchUser(value)}
+                onFocus={() => {
+                    setOpen(true);
+                }}
+                onInputChange={(_event, value, _reason) => handleInputChange(value)}
                 options={users.map((user) => ({ id: user.id, label: user.login }))}
                 loading={isLoading}
                 filterOptions={(x) => x}
                 loadingText='Ładuję dane...'
+                inputValue={value}
                 renderInput={(params) => (
                     <TextField
                         sx={{
