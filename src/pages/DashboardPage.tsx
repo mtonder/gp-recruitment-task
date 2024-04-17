@@ -1,13 +1,16 @@
 import PageHeader from '../ui/Header';
+import CardWrapper from '../ui/dashboard/CardWrapper';
 
 function DashboardPage() {
     return (
         <>
             <PageHeader
                 title='Dashboard'
-                subtitle='Dashboard subtitle'
+                subtitle='Statystyki projektu'
             />
-            <p>This is the dashboard page.</p>
+            <section>
+                <CardWrapper />
+            </section>
         </>
     );
 }
