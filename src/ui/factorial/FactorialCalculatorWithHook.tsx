@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react';
 import useFactorialCalculator from '../../hooks/useFactorialCalculator';
 import { Factorial } from '../../lib/definitions';
 
+/**
+ * Komponent w którym silnia jest wyliczana przy użyciu customowego hooka. Stan przechowywany jest lokalnie.
+ */
+
 function FactorialCalculatorWithHook() {
     const { value, factorial, setValue } = useFactorialCalculator(5);
     const [computedFactorials, setComputedFactorials] = useState<Factorial[]>([]);

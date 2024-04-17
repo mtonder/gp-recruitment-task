@@ -1,17 +1,23 @@
 import { useEffect, useState } from 'react';
 import { Factorial } from '../../lib/definitions';
 import caluclateFactorial from '../../lib/factorial';
+import { useAppDispatch, useAppSelector } from '../../lib/hooks';
+import { setComputedFactorials } from '../../redux/slices/factorialSlice';
 
 function FactorialCalculator() {
     const [value, setValue] = useState<number>();
     const [factorial, setFactorial] = useState<Factorial>();
-    const [computedFactorials, setComputedFactorials] = useState<Factorial[]>([]);
     const [isValid, setIsValid] = useState<boolean>(true);
     const [isEmpty, setIsEmpty] = useState<boolean>(true);
 
+    const dispatch = useAppDispatch();
+    const computedFactorials = useAppSelector((state) => state.factorial.computedFactorials);
+
     useEffect(() => {
-        if (factorial) setComputedFactorials((prevItems) => [factorial, ...prevItems]);
-    }, [factorial]);
+        if (factorial) {
+            dispatch(setComputedFactorials(factorial));
+        }
+    }, [factorial, dispatch]);
 
     const handleChange = (value: string) => {
         const factorial = Number(value);
@@ -81,16 +87,16 @@ function FactorialCalculator() {
             )}
             <div className='factorial-calculator__history'>
                 {computedFactorials.length > 0 && <h2>Historia obliczeń</h2>}
-                {computedFactorials.map((factorial, index) => {
+                {computedFactorials.map((factorial: Factorial, index) => {
                     return (
                         <p
                             className='factorial-calculator__history-entry'
                             key={index}
                         >
-                            <span title={factorial.computedValue}>
-                                Iteracja {computedFactorials.length - index} ({factorial.date}):{' '}
-                                {factorial.initialValue}! ={' '}
-                                <span className='bold'>{factorial.computedValue}</span>
+                            <span title={factorial?.computedValue}>
+                                Iteracja {computedFactorials?.length - index} ({factorial?.date}):{' '}
+                                {factorial?.initialValue}! ={' '}
+                                <span className='bold'>{factorial?.computedValue}</span>
                             </span>
                         </p>
                     );
