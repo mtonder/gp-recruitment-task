@@ -3,6 +3,7 @@
     background-color: white;
     border-radius: 0.75rem /* 12px */;
     flex-grow: 1;
+    margin-bottom: 1rem;
 
     + div {
         margin-left: 1rem;
@@ -26,7 +27,6 @@
     &__icon {
         height: 1.5rem;
         width: 1.5rem;
-        margin-right: 0.5rem;
     }
     &__value {
         overflow: hidden;
@@ -39,13 +39,25 @@
         font-size: 1.5rem;
         line-height: 2rem;
     }
+
+    &__chart {
+        position: relative;
+        height: 50vh;
+        max-height: 600px;
+        display: flex;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 }
 
 @media (max-width: 1024px) {
     .card {
         + div {
             margin-left: 0;
-            margin-top: 1rem;
+        }
+        &__chart {
+            height: auto;
         }
     }
 }

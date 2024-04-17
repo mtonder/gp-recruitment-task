@@ -1,4 +1,5 @@
 import PageHeader from '../ui/Header';
+import Card from '../ui/dashboard/Card';
 import CardWrapper from '../ui/dashboard/CardWrapper';
 
 function DashboardPage() {
@@ -9,7 +10,15 @@ function DashboardPage() {
                 subtitle='Statystyki projektu'
             />
             <section>
-                <CardWrapper />
+                <div>
+                    <CardWrapper />
+                </div>
+                <div>
+                    <Card
+                        title='Wykres linii kodu'
+                        type='chart'
+                    />
+                </div>
             </section>
         </>
     );
