@@ -1,10 +1,10 @@
 import Card from './Card';
 
 function CardWrapper() {
-    const code: number = 1547;
-    const files: number = 43;
-    const popular: string = 'tsx';
-    const commits: number = 12;
+    const code: number = 1771;
+    const files: number = 47;
+    const popular: string = '.tsx';
+    const commits: number = 18;
 
     return (
         <div className='card-wrapper'>
