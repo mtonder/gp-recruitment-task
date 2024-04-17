@@ -1,10 +1,15 @@
-import { BanknotesIcon, ClockIcon, UserGroupIcon, InboxIcon } from '@heroicons/react/24/outline';
+import {
+    CodeBracketIcon,
+    ArrowTrendingUpIcon,
+    ClipboardDocumentCheckIcon,
+    CommandLineIcon,
+} from '@heroicons/react/24/outline';
 
 const iconMap = {
-    code: BanknotesIcon,
-    files: UserGroupIcon,
-    popular: ClockIcon,
-    commits: InboxIcon,
+    code: CodeBracketIcon,
+    files: ClipboardDocumentCheckIcon,
+    popular: ArrowTrendingUpIcon,
+    commits: CommandLineIcon,
 };
 
 interface CardProps {

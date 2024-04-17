@@ -6,7 +6,7 @@ function FactorialPage() {
         <>
             <PageHeader
                 title='Factorial'
-                subtitle='Obliczanie silni wraz z historią obliczeń.'
+                subtitle='Obliczanie silni wraz z historią obliczeń'
             />
             <section>
                 <FactorialCalculator />

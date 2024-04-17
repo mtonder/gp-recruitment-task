@@ -6,7 +6,7 @@ function GitfetcherPage() {
         <>
             <PageHeader
                 title='Git Fetcher'
-                subtitle='Wyszukiwarka użytkowników GitHub. Dla wybranego użytkownika pobiera listę 5 ostatnio aktualizowanych repozytoriów z commitami.'
+                subtitle='Wyszukiwarka użytkowników GitHub'
             />
             <section>
                 <GitFetcher />

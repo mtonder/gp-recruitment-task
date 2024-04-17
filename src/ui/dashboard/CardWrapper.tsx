@@ -20,7 +20,7 @@ function CardWrapper() {
                     type='files'
                 />
                 <Card
-                    title='Popularność'
+                    title='Popularny typ'
                     value={popular}
                     type='popular'
                 />
