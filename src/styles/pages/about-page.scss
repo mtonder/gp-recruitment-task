@@ -1,4 +1,4 @@
-.about {
+.about-page {
     &__author {
         padding: 16px 0 8px;
     }
@@ -19,7 +19,7 @@
 }
 
 @media (max-width: 768px) {
-    .about {
+    .about-page {
         &__footer {
             display: flex;
             flex-direction: column;

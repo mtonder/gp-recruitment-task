@@ -37,20 +37,25 @@ a {
 
 input {
     padding: 8px;
-    border-radius: 8px;
+    border-radius: 4px;
     outline: none;
     border: 1px solid $border-dark;
     font-size: medium;
-
-    &:hover,
-    &:active,
-    &:focus {
-        border: 1px solid $link-hover;
-    }
+    font-family: 'Geist Variable';
 }
 
 label {
     display: flex;
     font-size: small;
     color: $text-light;
+}
+
+.start-adorment {
+    width: 20px;
+    height: 20px;
+    color: gray;
+}
+
+li {
+    font-family: 'Geist Variable';
 }

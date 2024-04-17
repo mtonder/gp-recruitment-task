@@ -13,6 +13,12 @@
 @import 'components/navlinks';
 @import 'components/bottom-menu';
 @import 'components/factorial-calculator';
+@import 'components/gitfetcher';
+@import 'components/users-search.scss';
+@import 'components/repos-list.scss';
+@import 'components/repo-commits.scss';
+@import 'components/card.scss';
+@import 'components/card-wrapper.scss';
 
 //Pages
-@import 'pages/about';
+@import 'pages/about-page';

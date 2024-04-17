@@ -1,0 +1,37 @@
+.repos-list {
+    &__title {
+        font-size: larger;
+        color: $link;
+        &:hover {
+            color: $link-hover;
+            text-decoration: underline;
+        }
+    }
+
+    &__repo {
+        border: 1px solid #e0e0df;
+        border-radius: 4px;
+        padding: 8px;
+        background: white;
+        margin: 8px 0;
+
+        // &:nth-of-type(odd) {
+        //     background-color: #f5f5f5;
+        // }
+
+        // &:first-of-type {
+        //     border-top: 1px solid $border-dark;
+        // }
+    }
+    // &__repo {
+    //     border-bottom: 1px solid $border-dark;
+
+    //     &:nth-of-type(odd) {
+    //         background-color: #f5f5f5;
+    //     }
+
+    //     &:first-of-type {
+    //         border-top: 1px solid $border-dark;
+    //     }
+    // }
+}

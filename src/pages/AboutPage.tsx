@@ -1,11 +1,11 @@
-import PageHeader from '../components/Header';
+import PageHeader from '../ui/Header';
 import vite from '/vite.svg';
 import react from '/react.svg';
 import redux from '/redux.svg';
 
-function About() {
+function AboutPage() {
     return (
-        <div className='about'>
+        <div className='about-page'>
             <PageHeader
                 title='About app'
                 subtitle='Lista wymagań dla zadania rekrutacyjnego.'
@@ -98,8 +98,8 @@ function About() {
                     </li>
                 </ul>
             </section>
-            <section className='about__footer'>
-                <div className='about__author'>
+            <section className='about-page__footer'>
+                <div className='about-page__author'>
                     Autor:{' '}
                     <a
                         target='_blank'
@@ -115,7 +115,7 @@ function About() {
                         alt='Vercel Deploy'
                     />
                 </div>
-                <div className='about__poweredby'>
+                <div className='about-page__poweredby'>
                     <img
                         src={vite}
                         alt='Powered by Vite'
@@ -134,4 +134,4 @@ function About() {
     );
 }
 
-export default About;
+export default AboutPage;

@@ -1,0 +1,10 @@
+.gitfetcher {
+    &__reposlist {
+        &--info {
+            color: $info;
+        }
+        &--error {
+            color: $danger;
+        }
+    }
+}

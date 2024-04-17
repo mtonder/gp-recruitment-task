@@ -1,7 +1,42 @@
 .factorial-calculator {
+    &__form {
+        display: flex;
+        flex-direction: row;
+        place-items: center;
+    }
+    &__input-container {
+        flex-grow: 1;
+        margin-right: 8px;
+    }
+    &__button-container {
+        margin-top: 16px;
+    }
+    &__button {
+        width: 100px;
+        padding: 11px;
+        font-size: medium;
+        border-radius: 4px;
+        background: $link;
+        color: white;
+        border: none;
+
+        &:hover {
+            background: $link-hover;
+            cursor: pointer;
+        }
+        &:disabled {
+            background: $text-light;
+        }
+    }
+
     &__input {
         min-width: 200px;
         width: 100%;
+        &:hover,
+        &:active,
+        &:focus {
+            border: 1px solid $link-hover;
+        }
     }
     &__computed-result {
         padding: 8px 0;
